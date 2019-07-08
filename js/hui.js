@@ -441,6 +441,7 @@ var hui = (function(selector){
 		sets.header = 'header' in sets ? sets.header : false;
 		var xhr = new window.XMLHttpRequest();
 		xhr.open(sets.type, sets.url, async);
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 		if(typeof(xhr) == 'undefined'){if(sets.error){sets.error(_lang.xhrError);} return;}
 		if(sets.header){
 			for(var i = 0; i < sets.header.length; i++){
